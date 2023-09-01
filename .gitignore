@@ -1,4 +1,4 @@
-raw_data/*
+data/*
 env/*
 
 .DS_Store
