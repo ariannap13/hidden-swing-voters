@@ -1,3 +1,3 @@
 # Finding Hidden Swingers in the 2022 Italian Elections Twitter Discourse
 
-This repository contains notebooks for community detection, analysis and exploration with the Louvain method. It also includes a notebook for a fine-grained analysis of users "swinging" between political parties. 
+This repository contains the code to reproduce the experiments described in the article *Finding Hidden Swingers in the 2022 Italian Elections Twitter Discourse*, A.Antelmi, L. La Cava, and A. Pera.
