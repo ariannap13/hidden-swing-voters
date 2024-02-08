@@ -1,5 +1,7 @@
 data/*
 env/*
-results/*
+results/louvain_communities/*
+
+_test*
 
 .DS_Store
