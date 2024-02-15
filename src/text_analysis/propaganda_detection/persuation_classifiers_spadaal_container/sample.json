@@ -1,0 +1,19 @@
+{
+    "data": [
+      {
+        "uid": "u1",
+        "text": "I will build a great, great wall on our southern border, and I will have Mexico pay for that wall. Mark my words."
+      },
+      {
+        "uid": "u2",
+        "text": "What I won't do is take in two hundred thousand Syrians who could be ISIS... I have been watching this migration. And I see the people. I mean, they're men. They're mostly men, and they're strong men. These are physically young, strong men. They look like prime-time soldiers. Now it's probably not true, but where are the women?... So, you ask two things. Number one, why aren't they fighting for their country? And number two, I don't want these people coming over here."
+      },
+      {
+        "uid": "u4",
+        "text": "I will build a great, great wall on our southern border, and I will have Mexico pay for that wall. Mark my words."
+      }
+    ],
+    "map_to_labels": false,
+    "coarse_labels": false,
+    "level": "sentence"
+  }

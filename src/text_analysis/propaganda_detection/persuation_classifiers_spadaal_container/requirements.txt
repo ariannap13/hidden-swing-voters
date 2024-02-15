@@ -1,0 +1,10 @@
+#transformers
+#huggingface_hub
+#torch
+pandas
+more_itertools
+beautifulsoup4
+nltk
+fastapi
+uvicorn
+python-multipart

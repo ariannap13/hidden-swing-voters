@@ -3,3 +3,4 @@ env/*
 results/*
 
 .DS_Store
+/src/text_analysis/propaganda_detection/pt_model_multi_fine/pytorch_model.bin
