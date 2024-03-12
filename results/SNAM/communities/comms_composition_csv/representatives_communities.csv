@@ -1,4 +1,4 @@
-id,period,community_id,community_label
+user_id,period,comm_id,comm_label
 425752285,before,4,PD;AVS
 425752285,during,3,PD;AVS
 425752285,after,6,PD;AVS
