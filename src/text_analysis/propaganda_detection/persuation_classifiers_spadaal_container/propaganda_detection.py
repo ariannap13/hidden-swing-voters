@@ -30,7 +30,7 @@ cfg = read_config('defaults.cfg')
 model = instantiate_model(cfg)
 
 # Data loading and processing
-data = load_data("../tweets_vips.json")
+data = load_data("../../../../data/tweets_vips.json")
 print(f"Loaded {len(data)} tweets.", flush=True)
 # subset data to only first 10 tweets for testing
 #data = {k: data[k] for k in list(data.keys())[:10]}
@@ -44,6 +44,16 @@ results_paragraph = aggregate_results(text, output, level='paragraph', granulari
 
 # Streamlining the annotation snippet function
 def get_annotated_snippets(results_sentence, guid, text, data):
+    """
+    Function to extract annotated snippets from the results and append them to the data dictionary.
+
+    :param results_sentence: The results of the sentence-level prediction.
+    :param guid: The list of document IDs.
+    :param text: The list of text documents.
+    :param data: The data dictionary to append the annotations to.
+
+    :return: The updated data dictionary.
+    """
     json_output = output_to_json(results_sentence, document_ids=guid, map_to_labels=True)
 
     for doc_id, doc in json_output.items():
@@ -58,12 +68,19 @@ def get_annotated_snippets(results_sentence, guid, text, data):
 
 data_annotated = get_annotated_snippets(results_sentence, guid, text, data)
 
-# Encapsulate file saving functionality
 def save_data(file_path, data):
+    """
+    Function to save data to a JSON file.
+
+    :param file_path: The path to the file to save the data to.
+    :param data: The data dictionary to save.
+
+    :return: None
+    """
     with open(file_path, "w") as f:
         json.dump(data, f, indent=4)
 
-save_data("../tweets_vips_annotated.json", data_annotated)
+save_data("../../../../tweets_vips_annotated.json", data_annotated)
 
 # end timer
 end = time.time()

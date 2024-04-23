@@ -10,6 +10,14 @@ counter = 0
 lock = threading.Lock()
 
 def process_file(file_path, ids_set):
+    """
+    Function to process a file and extract tweets from VIPs.
+
+    :param file_path: The path to the file to process.
+    :param ids_set: The set of VIP IDs.
+
+    :return: A dictionary of tweets from VIPs.
+    """
     local_dict_overall = {}
     with bz2.open(file_path, "rt") as f:
         for line in f:
@@ -37,6 +45,13 @@ def process_file(file_path, ids_set):
     return local_dict_overall
 
 def update_progress(future):
+    """
+    Function to update the progress of the files processed.
+
+    :param future: The future object to get the result from.
+
+    :return: None
+    """
     global counter
     dict_overall.update(future.result())
     with lock:
@@ -44,14 +59,14 @@ def update_progress(future):
         print(f"Files processed: {counter}/{total_files}", flush=True)
 
 # Load the data (twitter handles of VIPs)
-vips_info = pd.read_csv('../twitter_representatives_handles_final.csv')
+vips_info = pd.read_csv('../../../data/twitter_representatives_handles_final.csv')
 ids_set = set(vips_info['ids'].values)
 print(f"Number of VIPs: {len(ids_set)}", flush=True)
 
 # Paths to data directories
 data_dirs = [
-    "../ita-2022_twitter_data/search_tweets/",
-    "../ita-2022_twitter_data/tweets/"
+    "../../../data/ita-2022_twitter_data/search_tweets/",
+    "../../../data/ita-2022_twitter_data/tweets/"
 ]
 
 dict_overall = {}
@@ -71,6 +86,6 @@ with ThreadPoolExecutor() as executor:
 # No need to loop through futures to update dict_overall; done_callbacks handle it
 
 # Save dict_overall to a file (json)
-dict_dir = "./"
+dict_dir = "../../../data/"
 with open(os.path.join(dict_dir, "tweets_vips.json"), "w") as f:
     json.dump(dict_overall, f)

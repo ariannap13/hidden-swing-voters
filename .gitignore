@@ -3,3 +3,5 @@ results/*
 
 .DS_Store
 /src/text_analysis/propaganda_detection/pt_model_multi_fine/pytorch_model.bin
+/src/text_analysis/propaganda_detection/persuation_classifiers_spadaal_container/propaganda_detect.out
+/data/ita-2022_twitter_data/*

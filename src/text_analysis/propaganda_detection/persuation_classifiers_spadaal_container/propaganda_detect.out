@@ -3,5 +3,4 @@ There are 1 GPU(s) available: Tesla V100-PCIE-32GB
 None
 cuda
 Loaded 18008 tweets.
-Using threshold:  0.35
-Execution time: 612.5021007061005 seconds
+slurmstepd: error: *** JOB 177129 ON cn4 CANCELLED AT 2024-04-23T13:49:46 ***
