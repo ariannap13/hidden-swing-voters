@@ -30,10 +30,9 @@ cfg = read_config('defaults.cfg')
 model = instantiate_model(cfg)
 
 # Data loading and processing
-data = load_data("../../../../data/tweets_vips.json")
+data = load_data("../../../../data/tweets_vips.json") # provided upon request
 print(f"Loaded {len(data)} tweets.", flush=True)
-# subset data to only first 10 tweets for testing
-#data = {k: data[k] for k in list(data.keys())[:10]}
+
 guid = list(data.keys())
 text = [data[id]['text'] for id in guid]
 
@@ -80,7 +79,7 @@ def save_data(file_path, data):
     with open(file_path, "w") as f:
         json.dump(data, f, indent=4)
 
-save_data("../../../../tweets_vips_annotated.json", data_annotated)
+save_data("../../../../tweets_vips_annotated.json", data_annotated) # provided upon request
 
 # end timer
 end = time.time()

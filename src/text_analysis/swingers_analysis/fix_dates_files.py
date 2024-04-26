@@ -1,11 +1,9 @@
 import json
 
-# read json
+# read json, file available upon request
 with open('../../../data/tweets_vips.json') as f:
     tweets_vips = json.load(f)
 
-# fix dates (created_at) put in the format "YYYY-MM-DD"
-# some dates are in the format "2022-07-05T20:41:05.000Z", some others "Mon Sep 26 21:41:53 +0000 2022"
 for tweet in tweets_vips:
     if "created_at" in tweets_vips[tweet]:
         date = tweets_vips[tweet]["created_at"]
@@ -153,7 +151,7 @@ with open('../../../data/tweets_vips_annotated.json', 'w') as f:
     json.dump(tweets_vips_annotated, f, indent=4)
 
 
-# also fix propaganda_swingers.json
+# also fix propaganda_swingers.json, file available upon request
 with open('../../../data/propaganda_swingers.json') as f:
     propaganda_swingers = json.load(f)
 
@@ -234,7 +232,7 @@ with open('../../../data/propaganda_swingers.json', 'w') as f:
     json.dump(propaganda_swingers, f, indent=4)
         
 
-# also fix propaganda_nonswingers.json
+# also fix propaganda_nonswingers.json, file available upon request
 with open('../../../data/propaganda_nonswingers.json') as f:
     propaganda_nonswingers = json.load(f)
 
