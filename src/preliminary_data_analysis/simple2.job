@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#SBATCH --job-name=get_tweets_bytype      # Job name
+#SBATCH --output=tweets_types.out      # Name of output file (%j expands to jobId)
+#SBATCH --cpus-per-task=16        # Schedule one core
+#SBATCH --time=12:00:00        # Run time (hh:mm:ss) - run for one hour max
+#SBATCH --partition=red,brown    # Run on either the Red or Brown queue
+#SBATCH --mem=150G
+
+
+# Print out the hostname of the node the job is running on
+python get_tweets_bytype.py
