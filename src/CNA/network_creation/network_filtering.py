@@ -139,7 +139,7 @@ def main():
     # involving at least a political representative.
 
     # Preparing representative users
-    representative_users = prepare_representatives(args.path_representative)
+    # representative_users = prepare_representatives(args.path_representative)
 
     # Parsing raw data
     data = parse_data(args.path_raw_data)
@@ -148,11 +148,11 @@ def main():
     graph = create_graph(data)
 
     # Creating representative graph
-    graph_representative = create_representative_graph(data, representative_users)
+    # graph_representative = create_representative_graph(data, representative_users)
 
     # Saving graphs
     save_graph(graph, args.out_graph)
-    save_graph(graph_representative, args.out_graph_representative)
+    # save_graph(graph_representative, args.out_graph_representative)
 
 
 if __name__ == "__main__":
