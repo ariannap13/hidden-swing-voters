@@ -1,6 +1,0 @@
-PyTorch version: 2.0.0+cu117, CUDA is available.
-There are 1 GPU(s) available: Tesla V100-PCIE-32GB
-None
-cuda
-Loaded 18008 tweets.
-slurmstepd: error: *** JOB 177129 ON cn4 CANCELLED AT 2024-04-23T13:49:46 ***
