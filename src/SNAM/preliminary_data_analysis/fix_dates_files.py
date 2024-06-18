@@ -1,6 +1,6 @@
 import json
 
-filename = "tweets_vips_party" # change according to the file you want to fix
+filename = "tweets_vips" # change according to the file you want to fix
 
 # also fix dates in tweets_vips_annotated.json
 with open(f'../../../data/{filename}.json') as f:

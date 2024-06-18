@@ -88,8 +88,8 @@ def update_progress(future):
 
 # Paths to data directories
 data_dirs = [
-    "../../data/ita-2022_twitter_data/search_tweets/",
-    "../../data/ita-2022_twitter_data/tweets/"
+    "../../../data/ita-2022_twitter_data/search_tweets/",
+    "../../../data/ita-2022_twitter_data/tweets/"
 ]
 
 dict_overall_tweet = {}
@@ -111,7 +111,7 @@ with ThreadPoolExecutor() as executor:
 # No need to loop through futures to update dict_overall; done_callbacks handle it
 
 # Save dict_overall to a file (json)
-dict_dir = "../../data/"
+dict_dir = "../../../data/"
 with open(os.path.join(dict_dir, "tweets_all.json"), "w") as f:
     json.dump(dict_overall_tweet, f)
 with open(os.path.join(dict_dir, "retweets_all.json"), "w") as f:
