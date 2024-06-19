@@ -15,6 +15,9 @@ data_dir_tweets = "../../../data/ita-2022_twitter_data/tweets/"
 # file available upon request
 dict_dir = "../../../data/dict_tweet_byday/"
 
+# output_path
+output_path = "../../../data/00_raw_data/"
+
 def get_author_retweeted(p_id, date_):
     """
     Get the author of the retweeted tweet.
@@ -38,10 +41,13 @@ def get_author_retweeted(p_id, date_):
 # process files within data_dir_search_tweets
 for file in os.listdir(data_dir_search_tweets):
     date_ = file.split("_")[0]
-    file_edges = "file_edges_date_"+file.split('_')[0]
-    with open("/home/arpe/FormaMentis/new_retweet_data/"+file_edges, "a+") as f:
+    file_edges = "file_edges_date_" + file.split('_')[0]
+
+    with open(output_path + file_edges, "a+") as f:
         f.write("source,dest,text_tweet_id,created_at,type\n")
-        df = pd.read_json(data_dir_search_tweets+file, lines=True)
+
+        df = pd.read_json(data_dir_search_tweets + file, lines=True)
+
         for i, row in df.iterrows():
             u = row["author_id"]
             if "in_reply_to_user_id" in row: 
@@ -76,14 +82,18 @@ for file in os.listdir(data_dir_search_tweets):
                             f.write(towrite)                            
 
 # process files within data_dir_tweets
+# these tweets follow a different structure
 for file in os.listdir(data_dir_tweets):
     date_ = file.split("_")[0]
+
     if datetime.strptime(date_, "%Y-%m-%d") >= datetime.strptime("2022-09-02", "%Y-%m-%d"):
         file_edges = "file_edges_date_"+file.split('_')[0]
-        with open("/home/arpe/FormaMentis/retweet_data_new/"+file_edges, "a+") as f:    
+        with open(output_path+file_edges, "a+") as f:    
             if date_!="2022-09-02":
                 f.write("source,dest,text_tweet_id,created_at,type\n")
+
             df = pd.read_json(data_dir_tweets+file, lines=True)
+
             for i, row in df.iterrows():
                 if type(row["user"])==dict:
                     u = row["user"]["id"]
